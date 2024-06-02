@@ -23,7 +23,7 @@
       },
       {
         "source": "/api/sendPush/iOS/v1",
-        "function": "iOSV1"
+        "function": "push"
       },
       {
         "source": "/api/checkRateLimits",

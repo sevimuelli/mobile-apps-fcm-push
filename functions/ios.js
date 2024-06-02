@@ -40,7 +40,13 @@ module.exports = {
 
     var updateRateLimits = true;
 
-    if (req.body.registration_info.app_id.indexOf('io.robbie.HomeAssistant') > -1) {
+    if (
+      req.body.registration_info.app_id.indexOf('io.severinmueller.HAX.dev') >
+        -1 ||
+      req.body.registration_info.app_id.indexOf('io.severinmueller.HAX.beta') >
+        -1 ||
+      req.body.registration_info.app_id.indexOf('io.severinmueller.HAX') > -1
+    ) {
       // Enable old SNS iOS specific push setup.
       if (req.body.message === 'request_location_update' || req.body.message === 'request_location_updates') {
         payload.notification = {};

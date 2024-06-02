@@ -50,7 +50,13 @@ module.exports = {
       payload.apns.payload.webhook_id = req.body.registration_info.webhook_id;
     }
 
-    if (req.body.registration_info.app_id.indexOf('io.robbie.HomeAssistant') > -1) {
+    if (
+      req.body.registration_info.app_id.indexOf('io.severinmueller.HAX.dev') >
+        -1 ||
+      req.body.registration_info.app_id.indexOf('io.severinmueller.HAX.beta') >
+        -1 ||
+      req.body.registration_info.app_id.indexOf('io.severinmueller.HAX') > -1
+    ) {
       const addCommand = (command) => {
         payload.notification = {};
         payload.apns.payload.aps = {};
